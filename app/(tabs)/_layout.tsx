@@ -4,7 +4,7 @@ import { ImageBackground, Image, Text, View } from "react-native";
 import { icons } from "@/constants/icons";
 import { images } from "@/constants/images";
 
-function TabIcon({ focused, icon, title }: any) {
+function TabIcon({ focused, icon, title }: TabIconProps) {
   if (focused) {
     return (
       <ImageBackground
@@ -38,8 +38,8 @@ export default function TabsLayout() {
           alignItems: "center",
         },
         tabBarStyle: {
-          backgroundColor: "#0F0D23",
-          borderRadius: 30,
+          backgroundColor: "#24166C",
+          borderRadius: 20,
           marginHorizontal: 20,
           marginBottom: 36,
           height: 52,
@@ -55,7 +55,7 @@ export default function TabsLayout() {
         options={{
           title: "index",
           headerShown: false,
-          tabBarIcon: ({ focused }) => (
+          tabBarIcon: ({ focused }:TabIconProps) => (
             <TabIcon focused={focused} icon={icons.home} title="Home" />
           ),
         }}
@@ -66,7 +66,7 @@ export default function TabsLayout() {
         options={{
           title: "Search",
           headerShown: false,
-          tabBarIcon: ({ focused }) => (
+          tabBarIcon: ({ focused }:TabIconProps) => (
             <TabIcon focused={focused} icon={icons.search} title="Search" />
           ),
         }}
@@ -77,7 +77,7 @@ export default function TabsLayout() {
         options={{
           title: "Save",
           headerShown: false,
-          tabBarIcon: ({ focused }) => (
+          tabBarIcon: ({ focused }:TabIconProps) => (
             <TabIcon focused={focused} icon={icons.save} title="Save" />
           ),
         }}
@@ -88,7 +88,7 @@ export default function TabsLayout() {
         options={{
           title: "Profile",
           headerShown: false,
-          tabBarIcon: ({ focused }) => (
+          tabBarIcon: ({ focused }:TabIconProps) => (
             <TabIcon focused={focused} icon={icons.person} title="Profile" />
           ),
         }}
